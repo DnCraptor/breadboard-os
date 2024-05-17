@@ -48,6 +48,8 @@ add_subdirectory(${PROJECT_SOURCE_DIR}/git_version cmake_git_version_tracking)
 add_executable(${PROJ_NAME}
     main.c
 )
+target_link_options(${PROJECT_NAME} PRIVATE -Xlinker --print-memory-usage)
+
 target_link_libraries(${PROJ_NAME} PUBLIC
     FreeRTOS-Kernel
     FreeRTOS-Kernel-Heap4
